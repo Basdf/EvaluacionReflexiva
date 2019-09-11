@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">EVRED</string>
+    <string name="title">Evaluacion reflexiva</string>
+    <string name="correoUniversitario">Ingrese su correo universitario</string>
+    <string name="contraceñaUniversitaria">Ingrese su contraseña</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 </resources>
