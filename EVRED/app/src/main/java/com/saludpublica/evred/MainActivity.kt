@@ -4,7 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.saludpublica.evred.Login.Model.UserModel
+import com.saludpublica.evred.Login.Model.StudentModel
 
 import com.saludpublica.evred.Login.Presenter.ILoginPresenter
 import com.saludpublica.evred.Login.Presenter.LoginPresenter
@@ -18,11 +18,11 @@ class MainActivity : AppCompatActivity(), ILoginView {
         Toasty.error(this,message, Toast.LENGTH_LONG).show()
     }
 
-    override fun onLoginSuccess(message: String,user:UserModel) {
+    override fun onLoginSuccess(message: String,user:StudentModel) {
         Toasty.success(this,message, Toast.LENGTH_LONG).show()
-        //val intent=Intent(this,HomeActivity::class.java)
-//        intent.putExtra("email",user.email)
-//        intent.putExtra("name",user.name)
+        val intent=Intent(this,NavBarActivity::class.java)
+        intent.putExtra("email",user.email)
+        intent.putExtra("name",user.name)
         startActivity(intent)
     }
 
