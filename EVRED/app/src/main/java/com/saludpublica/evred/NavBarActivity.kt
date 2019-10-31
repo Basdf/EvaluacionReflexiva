@@ -46,9 +46,6 @@ class NavBarActivity : AppCompatActivity() {
         var name:TextView=headerView.findViewById(R.id.nameTextView)
         email.text=intent.getStringExtra("email")
         name.text=intent.getStringExtra("name")
-
-
-        Toasty.success(this,intent.getStringExtra("email"), Toast.LENGTH_LONG).show()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

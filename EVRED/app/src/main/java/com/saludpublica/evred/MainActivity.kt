@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity(), ILoginView {
         intent.putExtra("email",user.email)
         intent.putExtra("name",user.name)
         startActivity(intent)
+        finish()
     }
 
     internal lateinit var loginPresenter: ILoginPresenter
