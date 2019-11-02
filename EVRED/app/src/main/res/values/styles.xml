@@ -20,7 +20,7 @@
     <style name="Respuestas">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_below">@id/Pregunta2</item>
+        <item name="android:layout_below">@id/Pregunta5</item>
         <item name="android:layout_marginLeft">16dp</item>
         <item name="android:layout_marginTop">16dp</item>
         <item name="android:layout_marginRight">16dp</item>
@@ -39,7 +39,7 @@
     <style name="Titulo">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_below">@+id/Instrucciones</item>
+        <item name="android:layout_below">@+id/instrucciones</item>
         <item name="android:layout_marginLeft">16dp</item>
         <item name="android:layout_marginTop">16dp</item>
         <item name="android:layout_marginRight">16dp</item>
