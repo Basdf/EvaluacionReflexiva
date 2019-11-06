@@ -69,5 +69,13 @@
     <string name="observaciones">Observaciones o concluciones finales</string>
     <string name="siguiente">Siguiente</string>
     <string name="finalizar">finalizar</string>
-
+    <string name="ning_n_caso">Ningún\ncaso</string>
+    <string name="todos_nlos_casos">Todos\nlos casos</string>
+    <string name="la_mayor_a_nde_los_casos">La mayoría\nde los casos</string>
+    <string name="algunos_ncasos">Algunos\ncasos</string>
+    <string name="PreguntaD1">El comartamiento y el trato que usted recibe de los estudiantes es respetuoso en:</string>
+    <string name="PreguntaD2">El comartamiento y el trato que usted brinda de los estudiantes es respetuoso en:</string>
+    <string name="PreguntaD3">El cumplimiento de los estudiantes en relación con el horario de clase y las citas programadas se dan en:</string>
+    <string name="PreguntaD4">En general, con el desarrollo del curso, usted se encuentra:</string>
+    <string name="PreguntaD5">La disponibilidad de recursos(equipos, materiales, material bibliográfico) para la actividad academica es adecuada en:</string>
 </resources>
