@@ -15,15 +15,21 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginBottom="16dp"
-        tools:text="@string/PreguntaD1" />
+        android:text="@string/PreguntaD1" />
 
     <RadioGroup
         android:id="@+id/respuesta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/pregunta"
-        android:layout_margin="16dp"
-        android:orientation="horizontal">
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="horizontal"
+        android:visibility="visible">
 
         <RadioButton
             android:id="@+id/radioButton170"
@@ -51,15 +57,22 @@
     </RadioGroup>
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/argumento"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/respuesta"
-        android:layout_margin="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
         android:ems="10"
         android:gravity="start|top"
+        android:importantForAutofill="no"
         android:inputType="textMultiLine"
-        android:importantForAutofill="no" />
+        android:maxLength="800"
+        android:maxLines="15" />
 
     <Button
         android:id="@+id/siguiente"
@@ -68,5 +81,22 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:layout_margin="16dp"
-        android:text="@string/siguiente" />
+        android:text="@string/siguiente"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:id="@+id/atras"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/atras"
+        android:visibility="invisible" />
 </RelativeLayout>
