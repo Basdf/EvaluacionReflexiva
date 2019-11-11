@@ -1,6 +1,6 @@
-package com.saludpublica.evred.Login.Data
+package com.saludpublica.evred.login.Data
 
-import com.saludpublica.evred.Login.Model.StudentModel
+import com.saludpublica.evred.login.Model.StudentModel
 
 
 class StudentData: IStudentData

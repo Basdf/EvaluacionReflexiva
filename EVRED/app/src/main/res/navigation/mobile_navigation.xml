@@ -7,13 +7,13 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.saludpublica.evred.ui.home.HomeFragment"
+        android:name="com.saludpublica.evred.ui.encuestaEstudiante.AspectosGeneralesFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/nav_gallery"
-        android:name="com.saludpublica.evred.ui.EncuestaDocente.EncuestaDocenteFragment"
+        android:name="com.saludpublica.evred.ui.encuestaDocente.EncuestaDocenteFragment"
         android:label="@string/menu_gallery"
         tools:layout="@layout/fragment_gallery" />
 

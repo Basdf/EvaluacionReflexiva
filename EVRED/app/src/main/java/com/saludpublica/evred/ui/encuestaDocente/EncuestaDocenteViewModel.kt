@@ -1,4 +1,4 @@
-package com.saludpublica.evred.ui.EncuestaDocente
+package com.saludpublica.evred.ui.encuestaDocente
 
 import androidx.lifecycle.ViewModel
 

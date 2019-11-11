@@ -1,10 +1,10 @@
-package com.saludpublica.evred.Login.Presenter
+package com.saludpublica.evred.login.Presenter
 
 import android.text.TextUtils
 import android.util.Patterns
-import com.saludpublica.evred.Login.Data.StudentData
-import com.saludpublica.evred.Login.Model.StudentModel
-import com.saludpublica.evred.Login.View.ILoginView
+import com.saludpublica.evred.login.Data.StudentData
+import com.saludpublica.evred.login.Model.StudentModel
+import com.saludpublica.evred.login.View.ILoginView
 
 class LoginPresenter(internal var iLoginView: ILoginView) : ILoginPresenter {
     private val studentData: StudentData = StudentData()

@@ -27,12 +27,18 @@
             style="@style/Titulo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
             android:text="@string/Titulo2"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/Pregunta4"
+            android:id="@+id/pregunta4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/titulo"
@@ -43,14 +49,15 @@
             android:layout_marginRight="16dp"
             android:layout_marginBottom="16dp"
             android:gravity="start"
-            android:text="@string/Pregunta4" />
+            android:text="@string/Pregunta4"
+            android:textSize="18sp" />
 
         <RadioGroup
-            android:id="@+id/Respuesta4"
+            android:id="@+id/respuesta4"
             style="@style/Respuestas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/Pregunta4"
+            android:layout_below="@id/pregunta4"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="16dp"
@@ -95,23 +102,26 @@
         </RadioGroup>
 
         <TextView
-            android:id="@+id/Pregunta5"
+            android:id="@+id/pregunta5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/Respuesta4"
-            android:layout_margin="16dp"
+            android:layout_below="@id/respuesta4"
+            android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
             android:gravity="start"
-            android:text="@string/Pregunta5" />
+            android:text="@string/Pregunta5"
+            android:textSize="18sp" />
 
         <RadioGroup
-            android:id="@+id/Respuesta5"
+            android:id="@+id/respuesta5"
             style="@style/Respuestas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/Pregunta5"
+            android:layout_below="@id/pregunta5"
             android:layout_margin="16dp">
 
             <RadioButton
@@ -151,23 +161,26 @@
         </RadioGroup>
 
         <TextView
-            android:id="@+id/Pregunta6"
+            android:id="@+id/pregunta6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/Respuesta5"
-            android:layout_margin="16dp"
+            android:layout_below="@id/respuesta5"
+            android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
             android:gravity="start"
-            android:text="@string/Pregunta6" />
+            android:text="@string/Pregunta6"
+            android:textSize="18sp" />
 
         <RadioGroup
-            android:id="@+id/Respuesta6"
+            android:id="@+id/respuesta6"
             style="@style/Respuestas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/Pregunta6"
+            android:layout_below="@id/pregunta6"
             android:layout_margin="16dp">
 
             <RadioButton

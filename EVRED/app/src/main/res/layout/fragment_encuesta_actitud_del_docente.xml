@@ -27,6 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/Titulo5"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
         <TextView
@@ -38,7 +39,8 @@
             android:layout_marginTop="16dp"
             android:layout_marginRight="16dp"
             android:gravity="start"
-            android:text="@string/Pregunta18" />
+            android:text="@string/Pregunta18"
+            android:textSize="18sp" />
 
         <RadioGroup
             android:id="@+id/respuesta18"
@@ -90,7 +92,8 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/respuesta18"
             android:gravity="start"
-            android:text="@string/Pregunta19" />
+            android:text="@string/Pregunta19"
+            android:textSize="18sp" />
 
         <RadioGroup
             android:id="@+id/respuesta19"
@@ -144,7 +147,8 @@
             android:layout_marginTop="16dp"
             android:layout_marginRight="16dp"
             android:gravity="start"
-            android:text="@string/Pregunta20" />
+            android:text="@string/Pregunta20"
+            android:textSize="18sp" />
 
         <RadioGroup
             android:id="@+id/respuesta20"
@@ -198,7 +202,8 @@
             android:layout_marginTop="16dp"
             android:layout_marginRight="16dp"
             android:gravity="start"
-            android:text="@string/Pregunta21" />
+            android:text="@string/Pregunta21"
+            android:textSize="18sp" />
 
         <RadioGroup
             android:id="@+id/respuesta21"

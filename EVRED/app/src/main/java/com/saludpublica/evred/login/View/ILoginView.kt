@@ -1,6 +1,6 @@
-package com.saludpublica.evred.Login.View
+package com.saludpublica.evred.login.View
 
-import com.saludpublica.evred.Login.Model.StudentModel
+import com.saludpublica.evred.login.Model.StudentModel
 
 
 interface ILoginView {

@@ -4,11 +4,11 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.saludpublica.evred.Login.Model.StudentModel
+import com.saludpublica.evred.login.Model.StudentModel
 
-import com.saludpublica.evred.Login.Presenter.ILoginPresenter
-import com.saludpublica.evred.Login.Presenter.LoginPresenter
-import com.saludpublica.evred.Login.View.ILoginView
+import com.saludpublica.evred.login.Presenter.ILoginPresenter
+import com.saludpublica.evred.login.Presenter.LoginPresenter
+import com.saludpublica.evred.login.View.ILoginView
 import es.dmoral.toasty.Toasty
 import kotlinx.android.synthetic.main.activity_login.*
 

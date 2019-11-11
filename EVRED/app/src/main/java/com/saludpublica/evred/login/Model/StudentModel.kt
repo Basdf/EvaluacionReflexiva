@@ -1,4 +1,4 @@
-package com.saludpublica.evred.Login.Model
+package com.saludpublica.evred.login.Model
 
 class StudentModel(
     override val email: String, override val password: String,

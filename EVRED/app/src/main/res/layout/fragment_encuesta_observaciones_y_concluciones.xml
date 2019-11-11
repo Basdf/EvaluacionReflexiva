@@ -13,10 +13,11 @@
             style="@style/Pregunta"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/observaciones" />
+            android:text="@string/observaciones"
+            android:textSize="18sp" />
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/observacion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/observaciones"
