@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.RadioButton
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.saludpublica.evred.R
@@ -27,23 +28,23 @@ class ObjetivosFragment : Fragment() {
         siguiente.setOnClickListener() {
 
 
-            val respuesta4 = respuesta4.checkedRadioButtonId
-            val respuesta5 = respuesta5.checkedRadioButtonId
-            val respuesta6 = respuesta6.checkedRadioButtonId
+            val respuesta4Id = respuesta4.checkedRadioButtonId
+            val respuesta5Id = respuesta5.checkedRadioButtonId
+            val respuesta6Id = respuesta6.checkedRadioButtonId
             when {
-                respuesta4 == -1 -> Toasty.error(
+                respuesta4Id == -1 -> Toasty.error(
                     contexto,
                     "Por favor responder la pregunta 4",
                     Toast.LENGTH_LONG
                 )
                     .show()
-                respuesta5 == -1 -> Toasty.error(
+                respuesta5Id == -1 -> Toasty.error(
                     contexto,
                     "Por favor responder la pregunta 5",
                     Toast.LENGTH_LONG
                 )
                     .show()
-                respuesta6 == -1 -> Toasty.error(
+                respuesta6Id == -1 -> Toasty.error(
                     contexto,
                     "Por favor responder la pregunta 6",
                     Toast.LENGTH_LONG
@@ -56,13 +57,27 @@ class ObjetivosFragment : Fragment() {
                     val fragment = AspectosMetodologicosFragment()
                     val respuestas = arguments
                     if (respuestas != null) {
-                        respuestas.putInt("respuesta4", 1)//poner hay la respuesta de la pregunta
-                        respuestas.putInt("respuesta5", 1)
-                        respuestas.putInt("respuesta6", 1)
+                        var radioButton: View = respuesta4.findViewById(respuesta4Id)
+                        var indice: Int = respuesta4.indexOfChild(radioButton)
+                        var respuesta: RadioButton =
+                            respuesta4.getChildAt(indice) as RadioButton
+                        respuestas.putString("respuesta4", respuesta.text.toString())
+
+                        radioButton = respuesta5.findViewById(respuesta5Id)
+                        indice = respuesta5.indexOfChild(radioButton)
+                        respuesta = respuesta5.getChildAt(indice) as RadioButton
+                        respuestas.putString("respuesta5", respuesta.text.toString())
+
+                        radioButton = respuesta6.findViewById(respuesta6Id)
+                        indice = respuesta6.indexOfChild(radioButton)
+                        respuesta = respuesta6.getChildAt(indice) as RadioButton
+                        respuestas.putString("respuesta6", respuesta.text.toString())
+
+
+                        fragment.arguments = respuestas
+                        fragmentTransaction?.replace(R.id.nav_host_fragment, fragment)
+                        fragmentTransaction?.commit()
                     }
-                    fragment.arguments = respuestas
-                    fragmentTransaction?.replace(R.id.nav_host_fragment, fragment)
-                    fragmentTransaction?.commit()
                 }
             }
         }

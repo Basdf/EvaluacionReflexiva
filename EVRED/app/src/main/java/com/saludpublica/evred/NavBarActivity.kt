@@ -1,8 +1,6 @@
 package com.saludpublica.evred
 
 import android.os.Bundle
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
@@ -15,8 +13,6 @@ import androidx.appcompat.widget.Toolbar
 import android.view.Menu
 import android.view.View
 import android.widget.TextView
-import android.widget.Toast
-import es.dmoral.toasty.Toasty
 
 class NavBarActivity : AppCompatActivity() {
 
@@ -42,8 +38,8 @@ class NavBarActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
         val headerView : View=navView.getHeaderView(0)
-        var email:TextView=headerView.findViewById(R.id.emailTextView)
-        var name:TextView=headerView.findViewById(R.id.nameTextView)
+        val email:TextView=headerView.findViewById(R.id.emailTextView)
+        val name:TextView=headerView.findViewById(R.id.nameTextView)
         email.text=intent.getStringExtra("email")
         name.text=intent.getStringExtra("name")
     }
