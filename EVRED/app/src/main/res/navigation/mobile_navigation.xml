@@ -15,7 +15,7 @@
         android:id="@+id/nav_gallery"
         android:name="com.saludpublica.evred.ui.encuestaDocente.EncuestaDocenteFragment"
         android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/compromiso_View" />
 
     <fragment
         android:id="@+id/nav_slideshow"
@@ -31,13 +31,13 @@
 
     <fragment
         android:id="@+id/nav_share"
-        android:name="com.saludpublica.evred.ui.share.ShareFragment"
+        android:name="com.saludpublica.evred.ui.inicio.ShareFragment"
         android:label="@string/menu_share"
         tools:layout="@layout/fragment_share" />
 
     <fragment
         android:id="@+id/nav_send"
-        android:name="com.saludpublica.evred.ui.send.SendFragment"
+        android:name="com.saludpublica.evred.ui.encuestaCompromiso.SendFragment"
         android:label="@string/menu_send"
         tools:layout="@layout/fragment_send" />
 </navigation>

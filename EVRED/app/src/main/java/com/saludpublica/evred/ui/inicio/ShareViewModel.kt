@@ -1,4 +1,4 @@
-package com.saludpublica.evred.ui.share
+package com.saludpublica.evred.ui.inicio
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

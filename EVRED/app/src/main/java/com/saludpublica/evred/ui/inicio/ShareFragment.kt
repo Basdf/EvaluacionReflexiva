@@ -1,4 +1,4 @@
-package com.saludpublica.evred.ui.share
+package com.saludpublica.evred.ui.inicio
 
 import android.os.Bundle
 import android.view.LayoutInflater
