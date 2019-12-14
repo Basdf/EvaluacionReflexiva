@@ -3,41 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/nav_encuestaEstudiante">
 
     <fragment
-        android:id="@+id/nav_home"
+        android:id="@+id/nav_encuestaEstudiante"
         android:name="com.saludpublica.evred.ui.encuestaEstudiante.AspectosGeneralesFragment"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_encuesta_aspectos_generales_del_curso" />
 
     <fragment
-        android:id="@+id/nav_gallery"
+        android:id="@+id/nav_encuestaDocente"
         android:name="com.saludpublica.evred.ui.encuestaDocente.EncuestaDocenteFragment"
         android:label="@string/menu_gallery"
-        tools:layout="@layout/compromiso_View" />
+        tools:layout="@layout/fragment_encuesta_docente" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.saludpublica.evred.ui.slideshow.SlideshowFragment"
+        android:id="@+id/nav_encuestaCompromisos"
+        android:name="com.saludpublica.evred.ui.encuestaCompromiso.EncuestaCompromisoFragment"
         android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        tools:layout="@layout/fragment_encuesta_compromiso" />
 
-    <fragment
-        android:id="@+id/nav_tools"
-        android:name="com.saludpublica.evred.ui.tools.ToolsFragment"
-        android:label="@string/menu_tools"
-        tools:layout="@layout/fragment_tools" />
-
-    <fragment
-        android:id="@+id/nav_share"
-        android:name="com.saludpublica.evred.ui.inicio.ShareFragment"
-        android:label="@string/menu_share"
-        tools:layout="@layout/fragment_share" />
-
-    <fragment
-        android:id="@+id/nav_send"
-        android:name="com.saludpublica.evred.ui.encuestaCompromiso.SendFragment"
-        android:label="@string/menu_send"
-        tools:layout="@layout/fragment_send" />
 </navigation>

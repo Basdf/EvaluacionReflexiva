@@ -18,11 +18,11 @@ class MainActivity : AppCompatActivity(), ILoginView {
         Toasty.error(this,message, Toast.LENGTH_LONG).show()
     }
 
-    override fun onLoginSuccess(message: String,user:StudentModel) {
+    override fun onLoginSuccess(message: String, student:StudentModel) {
         Toasty.success(this,message, Toast.LENGTH_LONG).show()
         val intent=Intent(this,NavBarActivity::class.java)
-        intent.putExtra("email",user.email)
-        intent.putExtra("name",user.name)
+        intent.putExtra("email",student.email)
+        intent.putExtra("name",student.name)
         startActivity(intent)
         finish()
     }

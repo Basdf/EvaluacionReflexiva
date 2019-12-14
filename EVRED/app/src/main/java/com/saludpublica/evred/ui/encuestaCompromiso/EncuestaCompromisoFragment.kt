@@ -14,7 +14,7 @@ import com.saludpublica.evred.R
 import java.util.*
 
 
-class SendFragment : Fragment(), CompromisoAdapter.CustomListener {
+class EncuestaCompromisoFragment : Fragment(), CompromisoAdapter.CustomListener {
     var numeroC = 1
     var textId = "Compromiso"
     var list = ArrayList<String>()
