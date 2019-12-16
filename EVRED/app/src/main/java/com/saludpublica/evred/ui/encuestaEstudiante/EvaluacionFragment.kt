@@ -19,12 +19,13 @@ class EvaluacionFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val contexto = activity!!.applicationContext
+
         val root = inflater.inflate(
             R.layout.fragment_encuesta_evaluacion,
             container,
             false
         )
+        val context = root.context
         val siguiente: Button = root.findViewById(R.id.siguiente)
         siguiente.setOnClickListener() {
 
@@ -37,35 +38,35 @@ class EvaluacionFragment : Fragment() {
 
             when {
                 respuesta12Id == -1 -> Toasty.error(
-                    contexto,
+                    context,
                     "Por favor responder la pregunta 12",
                     Toast.LENGTH_LONG
                 )
                     .show()
                 respuesta13Id == -1 -> Toasty.error(
-                    contexto,
+                    context,
                     "Por favor responder la pregunta 13",
                     Toast.LENGTH_LONG
                 )
                     .show()
                 respuesta14Id == -1 -> Toasty.error(
-                    contexto,
+                    context,
                     "Por favor responder la pregunta 14",
                     Toast.LENGTH_LONG
                 )
                     .show()
                 respuesta15Id == -1 -> Toasty.error(
-                    contexto,
+                    context,
                     "Por favor responder la pregunta 15",
                     Toast.LENGTH_LONG
                 ).show()
                 respuesta16Id == -1 -> Toasty.error(
-                    contexto,
+                    context,
                     "Por favor responder la pregunta 16",
                     Toast.LENGTH_LONG
                 ).show()
                 respuesta17Id == -1 -> Toasty.error(
-                    contexto,
+                    context,
                     "Por favor responder la pregunta 17",
                     Toast.LENGTH_LONG
                 ).show()

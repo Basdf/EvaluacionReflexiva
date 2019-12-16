@@ -19,12 +19,12 @@ class AspectosMetodologicosFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val contexto = activity!!.applicationContext
         val root = inflater.inflate(
             R.layout.fragment_encuesta_aspectos_metodologicos,
             container,
             false
         )
+        val context = root.context
         val siguiente: Button = root.findViewById(R.id.siguiente)
         siguiente.setOnClickListener {
 
@@ -42,74 +42,74 @@ class AspectosMetodologicosFragment : Fragment() {
             val respuesta11Id = respuesta11.checkedRadioButtonId
             when {
                 respuestaItem1Id == -1 -> Toasty.error(
-                    contexto,
+                    context,
                     "Por favor responder el item 1",
                     Toast.LENGTH_LONG
                 )
                     .show()
                 respuestaItem2Id == -1 -> Toasty.error(
-                    contexto,
+                    context,
                     "Por favor responder el item 2",
                     Toast.LENGTH_LONG
                 )
                     .show()
                 respuestaItem3Id == -1 -> Toasty.error(
-                    contexto,
+                    context,
                     "Por favor responder el item 3",
                     Toast.LENGTH_LONG
                 )
                     .show()
                 respuestaItem4Id == -1 -> Toasty.error(
-                    contexto,
+                    context,
                     "Por favor responder el item 4",
                     Toast.LENGTH_LONG
                 )
                     .show()
                 respuestaItem5Id == -1 -> Toasty.error(
-                    contexto,
+                    context,
                     "Por favor responder el item 5",
                     Toast.LENGTH_LONG
                 )
                     .show()
                 respuestaItem6Id == -1 -> Toasty.error(
-                    contexto,
+                    context,
                     "Por favor responder el item 6",
                     Toast.LENGTH_LONG
                 )
                     .show()
                 respuestaItem7Id == -1 -> Toasty.error(
-                    contexto,
+                    context,
                     "Por favor responder el item 7",
                     Toast.LENGTH_LONG
                 )
                     .show()
 
                 respuestaItem8Id == -1 -> Toasty.error(
-                    contexto,
+                    context,
                     "Por favor responder el item 8",
                     Toast.LENGTH_LONG
                 )
                     .show()
                 respuesta8Id == -1 -> Toasty.error(
-                    contexto,
+                    context,
                     "Por favor responder la pregunta 8",
                     Toast.LENGTH_LONG
                 )
                     .show()
                 respuesta9Id == -1 -> Toasty.error(
-                    contexto,
+                    context,
                     "Por favor responder la pregunta 9",
                     Toast.LENGTH_LONG
                 )
                     .show()
                 respuesta10Id == -1 -> Toasty.error(
-                    contexto,
+                    context,
                     "Por favor responder la pregunta 10",
                     Toast.LENGTH_LONG
                 )
                     .show()
                 respuesta11Id == -1 -> Toasty.error(
-                    contexto,
+                    context,
                     "Por favor responder la pregunta 11",
                     Toast.LENGTH_LONG
                 )

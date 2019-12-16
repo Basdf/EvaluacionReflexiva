@@ -1,6 +1,5 @@
 package com.saludpublica.evred.ui.Home
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,35 +9,53 @@ import com.saludpublica.evred.R
 
 class HomeAdapter : RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
     var materias: MutableList<MateriasModel> = ArrayList()
-    lateinit var context: Context
+    lateinit var listener: OnclickInterface
 
-    fun HomeAdapter(materias : MutableList<MateriasModel>, context: Context){
+    fun HomeAdapter(materias: MutableList<MateriasModel>, onClick: OnclickInterface) {
         this.materias = materias
-        this.context = context
+        this.listener = onClick
+
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = materias.get(position)
-        holder.bind(item, context)
+        holder.bind(item)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
-        return ViewHolder(layoutInflater.inflate(R.layout.materias_view, parent, false))
+        val itemView = layoutInflater.inflate(R.layout.materias_view, parent, false)
+        return ViewHolder(itemView, listener)
     }
 
     override fun getItemCount(): Int {
         return materias.size
     }
-    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+
+    class ViewHolder(view: View, listener: OnclickInterface) : RecyclerView.ViewHolder(view),
+        View.OnClickListener {
+        var listener: OnclickInterface
         val nombre = view.findViewById(R.id.Nombre) as TextView
         val profesor = view.findViewById(R.id.Profesor) as TextView
 
-        fun bind(materias:MateriasModel, context: Context){
-            nombre.text = materias.nombre
-            profesor.text = materias.profesor
-
+        init {
+            view.setOnClickListener(this)
+            this.listener = listener
         }
 
+        fun bind(materias: MateriasModel) {
+            nombre.text = materias.nombre
+            profesor.text = materias.profesor
+        }
+
+        override fun onClick(v: View?) {
+            listener.onItemClick(adapterPosition)
+        }
+
+
+    }
+
+    interface OnclickInterface {
+        fun onItemClick(position: Int)
     }
 }

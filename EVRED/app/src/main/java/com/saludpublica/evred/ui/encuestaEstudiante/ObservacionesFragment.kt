@@ -17,18 +17,19 @@ class ObservacionesFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val contexto = activity!!.applicationContext
+        
         var encuestaEstudianteModel = EncuestaEstudianteModel()
         val root = inflater.inflate(
             R.layout.fragment_encuesta_observaciones_y_concluciones,
             container,
             false
         )
+        val context = root.context
         val finalizar: Button = root.findViewById(R.id.finalizar)
         finalizar.setOnClickListener() {
             if (observacion.text.toString() == "") {
                 Toasty.error(
-                    contexto,
+                    context,
                     "Por favor llenar el campo de observaciones",
                     Toast.LENGTH_LONG
                 ).show()

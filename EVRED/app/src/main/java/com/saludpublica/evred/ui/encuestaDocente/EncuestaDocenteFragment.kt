@@ -26,8 +26,9 @@ class EncuestaDocenteFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val contexto = activity!!.applicationContext
+
         val root = inflater.inflate(R.layout.fragment_encuesta_docente, container, false)
+        val context = root.context
         val siguiente: Button = root.findViewById(R.id.siguiente)
         val radionB1: RadioGroup = root.findViewById(R.id.respuesta_1)
         val radionB2: RadioGroup = root.findViewById(R.id.respuesta_2)
@@ -72,7 +73,7 @@ class EncuestaDocenteFragment : Fragment() {
             argumentoTxt = argumento.text.toString()/*.replace(" ","",false)*/
             if ((radioButtonId1 == -1 && radioButtonId2 == -1) || argumentoTxt == "") {
                 Toasty.error(
-                    contexto,
+                    context,
                     "Por favor responder la pregunta",
                     Toast.LENGTH_LONG
                 ).show()
