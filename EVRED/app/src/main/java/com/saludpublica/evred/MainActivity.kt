@@ -2,6 +2,7 @@ package com.saludpublica.evred
 
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -14,22 +15,23 @@ import kotlinx.android.synthetic.main.activity_login.*
 
 
 class MainActivity : AppCompatActivity(), ILoginView {
+    private val pref: SharedPreferences = applicationContext.getSharedPreferences(
+        "UserData",
+        Context.MODE_PRIVATE
+    )
+    private val editor = pref.edit()
 
     override fun onLoginError(message: String) {
-        Toasty.error(this,message, Toast.LENGTH_LONG).show()
+        Toasty.error(this, message, Toast.LENGTH_LONG).show()
     }
 
-    override fun onLoginSuccess(message: String, user:UserModel) {
-        Toasty.success(this,message, Toast.LENGTH_LONG).show()
-        val intent=Intent(this,NavBarActivity::class.java)
-        val pref = applicationContext.getSharedPreferences(
-            "UserData",
-            Context.MODE_PRIVATE
-        )
-        val editor = pref.edit()
-        editor.putString("email",user.email)
-        editor.putString("name",user.name)
-        editor.putString("cargo",user.cargo)
+    override fun onLoginSuccess(message: String, user: UserModel) {
+        Toasty.success(this, message, Toast.LENGTH_LONG).show()
+        val intent = Intent(this, NavBarActivity::class.java)
+
+        editor.putString("email", user.email)
+        editor.putString("name", user.name)
+        editor.putString("cargo", user.cargo)
         editor.commit()
         startActivity(intent)
         finish()

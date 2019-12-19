@@ -1,6 +1,7 @@
 package com.saludpublica.evred.ui.Home
 
 import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -17,8 +18,8 @@ import com.saludpublica.evred.ui.encuestaEstudiante.AspectosGeneralesFragment
 
 class HomeFragment : Fragment(), HomeAdapter.OnclickInterface {
     lateinit var view: Context
-
-
+    lateinit var pref :SharedPreferences
+    private val fragmentTransaction = fragmentManager?.beginTransaction()
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -30,6 +31,10 @@ class HomeFragment : Fragment(), HomeAdapter.OnclickInterface {
         val context = root.context
         lateinit var mRecyclerView: RecyclerView
         val mAdapter = HomeAdapter()
+        pref= view.getSharedPreferences(
+            "UserData",
+            Context.MODE_PRIVATE
+        )
         mRecyclerView = root.findViewById(R.id.rvMaterias) as RecyclerView
         mRecyclerView.setHasFixedSize(true)
         mRecyclerView.layoutManager = LinearLayoutManager(context)
@@ -42,84 +47,32 @@ class HomeFragment : Fragment(), HomeAdapter.OnclickInterface {
         var materias: MutableList<MateriasModel> = ArrayList()
         materias.add(
             MateriasModel(
-                "Spiderman",
-                "Marvel",
+                "matematicas",
+                "julio",
                 "1"
             )
         )
         materias.add(
             MateriasModel(
-                "Spiderman",
-                "DC",
+                "logica",
+                "roberto",
                 "2"
             )
         )
         materias.add(
             MateriasModel(
-                "Spiderman",
-                "Marvel",
+                "calidad",
+                "elmo",
                 "3"
             )
         )
-        materias.add(
-            MateriasModel(
-                "Spiderman",
-                "DC",
-                "4"
-            )
-        )
-        materias.add(
-            MateriasModel(
-                "Spiderman",
-                "Marvel",
-                "5"
-            )
-        )
-        materias.add(
-            MateriasModel(
-                "Spiderman",
-                "DC",
-                "6"
-            )
-        )
-        materias.add(
-            MateriasModel(
-                "Spiderman",
-                "Marvel",
-                "7"
-            )
-        )
-        materias.add(
-            MateriasModel(
-                "Spiderman",
-                "DC",
-                "8"
-            )
-        )
-        materias.add(
-            MateriasModel(
-                "Spiderman",
-                "Marvel",
-                "9"
-            )
-        )
-        materias.add(
-            MateriasModel(
-                "Spiderman",
-                "DC",
-                "10"
-            )
-        )
+
 
         return materias
     }
 
     override fun onItemClick(nombre: TextView, profesor: TextView, id: String) {
-        val pref = view.getSharedPreferences(
-            "UserData",
-            Context.MODE_PRIVATE
-        )
-        val fragmentTransaction = fragmentManager?.beginTransaction()
+
         var cargo = pref.getString("cargo", null)
         when (cargo) {
             "estudiante" -> {
