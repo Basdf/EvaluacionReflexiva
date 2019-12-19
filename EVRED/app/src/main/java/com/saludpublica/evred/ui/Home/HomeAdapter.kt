@@ -37,6 +37,7 @@ class HomeAdapter : RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
         var listener: OnclickInterface
         val nombre = view.findViewById(R.id.Nombre) as TextView
         val profesor = view.findViewById(R.id.Profesor) as TextView
+        lateinit var id:String
 
         init {
             view.setOnClickListener(this)
@@ -46,16 +47,18 @@ class HomeAdapter : RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
         fun bind(materias: MateriasModel) {
             nombre.text = materias.nombre
             profesor.text = materias.profesor
+            id=materias.id
+
         }
 
         override fun onClick(v: View?) {
-            listener.onItemClick(adapterPosition)
+            listener.onItemClick(nombre,profesor,id)
         }
 
 
     }
 
     interface OnclickInterface {
-        fun onItemClick(position: Int)
+        fun onItemClick(nombre:TextView,profesor:TextView,id:String)
     }
 }

@@ -5,12 +5,15 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myapplication.CompromisoAdapter
 import com.saludpublica.evred.R
-import es.dmoral.toasty.Toasty
+import com.saludpublica.evred.ui.encuestaCompromiso.EncuestaCompromisoFragment
+import com.saludpublica.evred.ui.encuestaDocente.EncuestaDocenteFragment
+import com.saludpublica.evred.ui.encuestaEstudiante.AspectosGeneralesFragment
 
 class HomeFragment : Fragment(), HomeAdapter.OnclickInterface {
     lateinit var view: Context
@@ -21,96 +24,120 @@ class HomeFragment : Fragment(), HomeAdapter.OnclickInterface {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         val root = inflater.inflate(R.layout.fragment_home, container, false)
-        view=root.context
-        val context=root.context
+        view = root.context
+        val context = root.context
         lateinit var mRecyclerView: RecyclerView
         val mAdapter = HomeAdapter()
-
-
         mRecyclerView = root.findViewById(R.id.rvMaterias) as RecyclerView
         mRecyclerView.setHasFixedSize(true)
         mRecyclerView.layoutManager = LinearLayoutManager(context)
-        mAdapter.HomeAdapter(getMaterias(),this)
+        mAdapter.HomeAdapter(getMaterias(), this)
         mRecyclerView.adapter = mAdapter
-
-
-
-
         return root
     }
 
     fun getMaterias(): MutableList<MateriasModel> {
-        var superheros: MutableList<MateriasModel> = ArrayList()
-        superheros.add(
+        var materias: MutableList<MateriasModel> = ArrayList()
+        materias.add(
             MateriasModel(
                 "Spiderman",
-                "Marvel"
+                "Marvel",
+                "1"
             )
         )
-        superheros.add(
+        materias.add(
             MateriasModel(
                 "Spiderman",
-                "DC"
+                "DC",
+                "2"
             )
         )
-        superheros.add(
+        materias.add(
             MateriasModel(
                 "Spiderman",
-                "Marvel"
+                "Marvel",
+                "3"
             )
         )
-        superheros.add(
+        materias.add(
             MateriasModel(
                 "Spiderman",
-                "DC"
+                "DC",
+                "4"
             )
         )
-        superheros.add(
+        materias.add(
             MateriasModel(
                 "Spiderman",
-                "Marvel"
+                "Marvel",
+                "5"
             )
         )
-        superheros.add(
+        materias.add(
             MateriasModel(
                 "Spiderman",
-                "DC"
+                "DC",
+                "6"
             )
         )
-        superheros.add(
+        materias.add(
             MateriasModel(
                 "Spiderman",
-                "Marvel"
+                "Marvel",
+                "7"
             )
         )
-        superheros.add(
+        materias.add(
             MateriasModel(
                 "Spiderman",
-                "DC"
+                "DC",
+                "8"
             )
         )
-        superheros.add(
+        materias.add(
             MateriasModel(
                 "Spiderman",
-                "Marvel"
+                "Marvel",
+                "9"
             )
         )
-        superheros.add(
+        materias.add(
             MateriasModel(
                 "Spiderman",
-                "DC"
+                "DC",
+                "10"
             )
         )
 
-        return superheros
+        return materias
     }
 
-    override fun onItemClick(position: Int) {
-        Toasty.success(
-            view,
-            "hola :V",
-            Toast.LENGTH_LONG
-        ).show()
+    override fun onItemClick(nombre: TextView, profesor: TextView, id: String) {
+        val pref = view.getSharedPreferences(
+            "UserData",
+            Context.MODE_PRIVATE
+        )
+        val fragmentTransaction = fragmentManager?.beginTransaction()
+        var cargo = pref.getString("cargo", null)
+        when (cargo) {
+            "estudiante" -> {
+                val fragment = AspectosGeneralesFragment()
+                fragmentTransaction?.replace(R.id.nav_host_fragment, fragment)
+                fragmentTransaction?.commit()
+            }
+            "docente" -> {
+                val fragment = EncuestaDocenteFragment()
+                fragmentTransaction?.replace(R.id.nav_host_fragment, fragment)
+                fragmentTransaction?.commit()
+            }
+            "compromiso" -> {
+                val fragment = EncuestaCompromisoFragment()
+                fragmentTransaction?.replace(R.id.nav_host_fragment, fragment)
+                fragmentTransaction?.commit()
+            }
+        }
+
     }
 }
