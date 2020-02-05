@@ -15,11 +15,9 @@ import kotlinx.android.synthetic.main.activity_login.*
 
 
 class MainActivity : AppCompatActivity(), ILoginView {
-    private val pref: SharedPreferences = applicationContext.getSharedPreferences(
-        "UserData",
-        Context.MODE_PRIVATE
-    )
-    private val editor = pref.edit()
+    lateinit var editor: SharedPreferences.Editor
+
+
 
     override fun onLoginError(message: String) {
         Toasty.error(this, message, Toast.LENGTH_LONG).show()
@@ -50,5 +48,10 @@ class MainActivity : AppCompatActivity(), ILoginView {
         loginButton.setOnClickListener {
             loginPresenter.onLogin(emailEditText.text.toString(), passwordEditText.text.toString())
         }
+        val pref = applicationContext.getSharedPreferences(
+            "UserData",
+            Context.MODE_PRIVATE
+        )
+        editor = pref.edit()
     }
 }
