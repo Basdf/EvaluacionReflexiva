@@ -18,12 +18,12 @@ class ObjetivosFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val contexto = activity!!.applicationContext
         val root = inflater.inflate(
             R.layout.fragment_encuesta_objetivos_y_contenidos,
             container,
             false
         )
+        val context = root.context
         val siguiente: Button = root.findViewById(R.id.siguiente)
         siguiente.setOnClickListener() {
 
@@ -33,19 +33,19 @@ class ObjetivosFragment : Fragment() {
             val respuesta6Id = respuesta6.checkedRadioButtonId
             when {
                 respuesta4Id == -1 -> Toasty.error(
-                    contexto,
+                    context,
                     "Por favor responder la pregunta 4",
                     Toast.LENGTH_LONG
                 )
                     .show()
                 respuesta5Id == -1 -> Toasty.error(
-                    contexto,
+                    context,
                     "Por favor responder la pregunta 5",
                     Toast.LENGTH_LONG
                 )
                     .show()
                 respuesta6Id == -1 -> Toasty.error(
-                    contexto,
+                    context,
                     "Por favor responder la pregunta 6",
                     Toast.LENGTH_LONG
                 )

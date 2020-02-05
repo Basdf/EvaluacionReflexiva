@@ -1,18 +1,19 @@
 package com.saludpublica.evred
 
+import android.content.Context
 import android.os.Bundle
+import android.view.Menu
+import android.view.View
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
-import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
-import android.view.Menu
-import android.view.View
-import android.widget.TextView
 
 class NavBarActivity : AppCompatActivity() {
 
@@ -31,16 +32,23 @@ class NavBarActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_encuestaEstudiante, R.id.nav_encuestaDocente, R.id.nav_encuestaCompromisos
+                R.id.nav_encuestaEstudiante,
+                R.id.nav_encuestaDocente,
+                R.id.nav_encuestaCompromisos,
+                R.id.nav_home
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
-        val headerView : View=navView.getHeaderView(0)
-        val email:TextView=headerView.findViewById(R.id.emailTextView)
-        val name:TextView=headerView.findViewById(R.id.nameTextView)
-        email.text=intent.getStringExtra("email")
-        name.text=intent.getStringExtra("name")
+        val headerView: View = navView.getHeaderView(0)
+        val pref = applicationContext.getSharedPreferences(
+            "UserData",
+            Context.MODE_PRIVATE
+        )
+        val email: TextView = headerView.findViewById(R.id.emailTextView)
+        val name: TextView = headerView.findViewById(R.id.nameTextView)
+        email.text =pref.getString("email",null)
+        name.text = pref.getString("name",null)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

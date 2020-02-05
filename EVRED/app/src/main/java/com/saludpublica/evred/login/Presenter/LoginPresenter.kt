@@ -2,20 +2,20 @@ package com.saludpublica.evred.login.Presenter
 
 import android.text.TextUtils
 import android.util.Patterns
-import com.saludpublica.evred.login.Data.StudentData
-import com.saludpublica.evred.login.Model.StudentModel
+import com.saludpublica.evred.login.Data.UserData
+import com.saludpublica.evred.login.Model.UserModel
 import com.saludpublica.evred.login.View.ILoginView
 
 class LoginPresenter(internal var iLoginView: ILoginView) : ILoginPresenter {
-    private val studentData: StudentData = StudentData()
+    private val studentData: UserData = UserData()
 
     override fun isStudent(email: String, password: String) {
         //busca en la base de datos el email y se trae la informacion nesesario
         // email password nombre materias
-        val student: StudentModel? = studentData.getStundent(email)
-        if (student != null) {
-            if (password == student.password) {
-                iLoginView.onLoginSuccess("Login success", student)
+        val user: UserModel? = studentData.getStundent(email)
+        if (user != null) {
+            if (password == user.password) {
+                iLoginView.onLoginSuccess("Login success", user)
             } else {
                 iLoginView.onLoginError("Incorrect password")
             }

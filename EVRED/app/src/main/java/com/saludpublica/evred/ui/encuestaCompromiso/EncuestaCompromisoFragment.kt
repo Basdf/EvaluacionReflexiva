@@ -25,15 +25,15 @@ class EncuestaCompromisoFragment : Fragment(), CompromisoAdapter.CustomListener 
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val contexto = activity!!.applicationContext
         val root = inflater.inflate(R.layout.fragment_encuesta_compromiso, container, false)
+        val context = root.context
         val addButton: ImageButton = root.findViewById(R.id.AddButton)
         val terminar: Button = root.findViewById(R.id.terminar)
         val rvList: RecyclerView = root.findViewById(R.id.rvList)
 
         rvList.adapter = adapter
 
-        rvList.layoutManager = LinearLayoutManager(contexto)
+        rvList.layoutManager = LinearLayoutManager(context)
 
 
         addButton.setOnClickListener() {
